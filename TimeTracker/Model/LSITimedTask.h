@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSITimedTask : NSObject
 
-
 @property (nonatomic, copy) NSString *client;
 @property (nonatomic, copy) NSString *workSummary;
 @property (nonatomic) double ratePerHour;

@@ -6,28 +6,22 @@
 //  Copyright © 2020 Lambda School. All rights reserved.
 //
 
-#import "LSITimedTaskController.h"
-#import "LSITimedTask.h"
+#import <Foundation/Foundation.h>
 
-@implementation LSITimedTaskController
+@class LSITimedTask;
 
+NS_ASSUME_NONNULL_BEGIN
 
--(instancetype)init {
-    self = [super init];
-    if (self) {
-        _timedTasks = [[NSMutableArray alloc] init];
-    }
-    return self;
-}
+@interface LSITimedTaskController : NSObject
+
+@property (nonatomic, copy) NSMutableArray<LSITimedTask *> *timedTasks;
+
 -(void)createTimeTaskWithClient:(NSString *)client
-                              workSummary:(NSString *)workSummary
-                              ratePerHour:(double)ratePerHour
-                              hoursWorked:(double)hoursWorked {
-    
-    
-    LSITimedTask *task = [[LSITimedTask alloc] initWithClient:client workSummary:workSummary ratePerHour:ratePerHour hoursWorked:hoursWorked];
-    
-    [_timedTasks addObject:task];
-}
+                               workSummary:(NSString *)workSummary
+                               ratePerHour:(double)ratePerHour
+                               hoursWorked:(double)workedHours;
 
 @end
+
+NS_ASSUME_NONNULL_END
+
