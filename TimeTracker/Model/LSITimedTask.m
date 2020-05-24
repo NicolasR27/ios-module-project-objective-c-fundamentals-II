@@ -10,4 +10,22 @@
 
 @implementation LSITimedTask
 
+-(instancetype)initWithClient:(NSString *)client
+                  workSummary:(NSString *)workSummary
+                  ratePerHour:(double)ratePerHour
+                  hoursWorked:(double)hoursWorked {
+    self = [super init];
+    if (self) {
+        
+        _client = client;
+        _workSummary = workSummary;
+        _ratePerHour = ratePerHour;
+        _hoursWorked = hoursWorked;
+    }
+    return self;
+}
+
+-(double)total {
+    return _ratePerHour * _hoursWorked;
+}
 @end

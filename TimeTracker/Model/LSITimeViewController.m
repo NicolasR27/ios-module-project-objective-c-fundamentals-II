@@ -6,27 +6,26 @@
 //  Copyright © 2020 Lambda School. All rights reserved.
 //
 
-#import "LSITimeViewController.h"
+#import "LSITimedTask.h"
 
-@interface LSITimeViewController ()
+@implementation LSITimedTask
 
-@end
-
-@implementation LSITimeViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+-(instancetype)initWithClient:(NSString *)client
+                  workSummary:(NSString *)workSummary
+                  ratePerHour:(double)ratePerHour
+                  hoursWorked:(double)hoursWorked {
+    self = [super init];
+    if (self) {
+        
+        _client = client;
+        _workSummary = workSummary;
+        _ratePerHour = ratePerHour;
+        _hoursWorked = hoursWorked;
+    }
+    return self;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(double)total {
+    return _ratePerHour * _hoursWorked;
 }
-*/
-
 @end
